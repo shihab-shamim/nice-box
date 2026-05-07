@@ -18,16 +18,9 @@
       "type": "string",
       "default": "center"
     },
-    "purposeType": {
+    "align": {
       "type": "string",
-      "default": "test"
-    },
-    "colors": {
-      "type": "object",
-      "default": {
-        "color": "black",
-        "bg": "#B1C5A4"
-      }
+      "default": "wide"
     }
   },
   "supports": {
