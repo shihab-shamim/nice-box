@@ -12,28 +12,28 @@ $primaryColor: #4527a4;
 
   .nbhs-container {
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    // padding-right: 15px;
+    // padding-left: 15px;
+    // margin-right: auto;
+    // margin-left: auto;
+    // padding-top: 3rem;
+    // padding-bottom: 3rem;
 
-    @media (min-width: 576px) {
-      max-width: 540px;
-    }
-    @media (min-width: 768px) {
-      max-width: 720px;
-    }
-    @media (min-width: 992px) {
-      max-width: 960px;
-    }
-    @media (min-width: 1200px) {
-      max-width: 1140px;
-    }
-    @media (min-width: 1400px) {
-      max-width: 1320px;
-    }
+    // @media (min-width: 576px) {
+    //   max-width: 540px;
+    // }
+    // @media (min-width: 768px) {
+    //   max-width: 720px;
+    // }
+    // @media (min-width: 992px) {
+    //   max-width: 960px;
+    // }
+    // @media (min-width: 1200px) {
+    //   max-width: 1140px;
+    // }
+    // @media (min-width: 1400px) {
+    //   max-width: 1320px;
+    // }
 
     .nbhs-row {
       display: grid;
@@ -63,8 +63,8 @@ $primaryColor: #4527a4;
           background-clip: border-box;
           border: 1px solid rgba(0, 0, 0, 0.125);
           border-radius: 25px;
-          margin-top: 3rem;
-          margin-bottom: 3rem;
+          //   margin-top: 3rem;
+          //   margin-bottom: 3rem;
 
           &.nbhs-box-shadow {
             -webkit-box-shadow: 0 1px 1px rgba(72, 78, 85, 0.6);
