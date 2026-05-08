@@ -1,18 +1,23 @@
-import { getColorsCSS } from '../../../../bpl-tools/utils/getCSS';
-
 const Style = ({ attributes, id }) => {
-	const { colors } = attributes;
+  const { options = {} } = attributes;
 
-	const mainSl = `#${id}`;
-	const blockSl = `${mainSl} .bBlocksTestPurpose`;
+  const mainSl = `#${id}`;
+  const cardsl = `${mainSl} .nbhs-row`;
 
-	return <style dangerouslySetInnerHTML={{
-		__html: `
+  return (
+    <style
+      dangerouslySetInnerHTML={{
+        __html: `
+		${cardsl} {
+		cursor: ${options?.clickOnCard ? "pointer" : "default"};
 		
-		${blockSl} p{
-			${getColorsCSS(colors)}
 		}
 
-	`}} />;
-}
+
+
+	`,
+      }}
+    />
+  );
+};
 export default Style;

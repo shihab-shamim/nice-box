@@ -28,7 +28,7 @@ const Settings = ({ attributes, setAttributes }) => {
         </div>
 
         <TabPanel
-          className="bPlTabPanel wp-block-b-blocks-test-purpose"
+          className="bPlTabPanel wp-block-icb-nice-box-pro"
           activeClass="activeTab"
           tabs={generalStyleTabs}
           onSelect={tabController}
