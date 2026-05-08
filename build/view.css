@@ -21,6 +21,7 @@
 }
 .wp-block-icb-nice-box-pro .nbhs-container .nbhs-row .nbhs-col .nbhs-card {
   position: relative;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
