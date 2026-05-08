@@ -1,11 +1,20 @@
 import { __ } from "@wordpress/i18n";
 
-import { PanelBody, ToggleControl } from "@wordpress/components";
-import { ItemsPanel } from "../../../../../../bpl-tools/Components";
+import {
+  PanelBody,
+  PanelRow,
+  RangeControl,
+  ToggleControl,
+} from "@wordpress/components";
+import {
+  Device,
+  ItemsPanel,
+  Label,
+} from "../../../../../../bpl-tools/Components";
 import OneSetting from "../../../Common/NCards/OneSetting";
 
-const General = ({ attributes, setAttributes }) => {
-  const { options = {} } = attributes || {};
+const General = ({ attributes, setAttributes, device }) => {
+  const { options = {}, styles = {} } = attributes || {};
   const newOneCard = {
     title: "Title",
     description: "Description",
@@ -31,6 +40,61 @@ const General = ({ attributes, setAttributes }) => {
           // premiumProps={premiumProps}
         />
       </PanelBody>
+      <PanelBody
+        className="bPlPanelBody"
+        title={__("Layouts", "info-cards")}
+        initialOpen={false}
+      >
+        <PanelRow>
+          <Label>Columns</Label>
+          <Device />
+        </PanelRow>
+        <RangeControl
+          value={styles?.columns?.[device]}
+          step={1}
+          max={8}
+          onChange={(val) => {
+            setAttributes({
+              styles: {
+                ...styles,
+                columns: {
+                  ...styles?.columns,
+                  [device]: val,
+                },
+              },
+            });
+          }}
+        />
+        <RangeControl
+          label={__("Column Gap", "info-cards")}
+          value={styles?.columnGap}
+          step={1}
+          max={250}
+          onChange={(val) => {
+            setAttributes({
+              styles: {
+                ...styles,
+                columnGap: val,
+              },
+            });
+          }}
+        />
+        <RangeControl
+          label={__("Row Gap", "info-cards")}
+          value={styles?.rowGap}
+          step={1}
+          max={250}
+          onChange={(val) => {
+            setAttributes({
+              styles: {
+                ...styles,
+                rowGap: val,
+              },
+            });
+          }}
+        />
+      </PanelBody>
+
       <PanelBody
         className="bPlPanelBody"
         title={__("Options", "info-cards")}

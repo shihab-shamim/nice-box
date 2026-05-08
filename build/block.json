@@ -60,6 +60,18 @@
         "clickOnCard": true,
         "openInNewTab": true
       }
+    },
+    "styles": {
+      "type": "object",
+      "default": {
+        "columns": {
+          "desktop": 3,
+          "tablet": 2,
+          "mobile": 1
+        },
+        "columnGap": 128,
+        "rowGap": 128
+      }
     }
   },
   "supports": {

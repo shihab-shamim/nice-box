@@ -37,17 +37,17 @@ $primaryColor: #4527a4;
 
     .nbhs-row {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      justify-content: center;
+      // grid-template-columns: 1fr;
+      // gap: 2rem;
+      // justify-content: center;
 
-      @media (min-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      // @media (min-width: 768px) {
+      //   grid-template-columns: repeat(2, 1fr);
+      // }
 
-      @media (min-width: 992px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      // @media (min-width: 992px) {
+      //   grid-template-columns: repeat(3, 1fr);
+      // }
 
       .nbhs-col {
         width: 100%;

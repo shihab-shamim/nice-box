@@ -15,19 +15,6 @@
 }
 .wp-block-icb-nice-box-pro .nbhs-container .nbhs-row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  justify-content: center;
-}
-@media (min-width: 768px) {
-  .wp-block-icb-nice-box-pro .nbhs-container .nbhs-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 992px) {
-  .wp-block-icb-nice-box-pro .nbhs-container .nbhs-row {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 .wp-block-icb-nice-box-pro .nbhs-container .nbhs-row .nbhs-col {
   width: 100%;

@@ -10,7 +10,7 @@ import { generalStyleTabs } from "../../../utils/options";
 import General from "./General/General";
 import Style from "./Style/Style";
 
-const Settings = ({ attributes, setAttributes }) => {
+const Settings = ({ attributes, setAttributes, device }) => {
   const { alignment } = attributes;
 
   return (
@@ -39,11 +39,16 @@ const Settings = ({ attributes, setAttributes }) => {
                 <General
                   attributes={attributes}
                   setAttributes={setAttributes}
+                  device={device}
                 />
               )}
 
               {"style" === tab.name && (
-                <Style attributes={attributes} setAttributes={setAttributes} />
+                <Style
+                  attributes={attributes}
+                  setAttributes={setAttributes}
+                  device={device}
+                />
               )}
             </>
           )}

@@ -1,15 +1,15 @@
 import { useBlockProps } from "@wordpress/block-editor";
-
+import { withSelect } from "@wordpress/data";
 import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import OneCard from "../Common/NCards/OneCard";
 
 const Edit = (props) => {
-  const { attributes, setAttributes, clientId } = props;
+  const { attributes, setAttributes, clientId, device } = props;
 
   return (
     <>
-      <Settings {...{ attributes, setAttributes }} />
+      <Settings {...{ attributes, setAttributes, device }} />
 
       <div {...useBlockProps()}>
         <Style attributes={attributes} id={`block-${clientId}`} />
@@ -19,4 +19,10 @@ const Edit = (props) => {
     </>
   );
 };
-export default Edit;
+export default withSelect((select) => {
+  const { getDeviceType } = select("core/editor");
+
+  return {
+    device: getDeviceType()?.toLowerCase(),
+  };
+})(Edit);
