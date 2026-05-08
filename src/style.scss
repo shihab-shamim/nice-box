@@ -76,8 +76,8 @@ $primaryColor: #4527a4;
               color: inherit;
               border: 0;
               border-top: 1px solid;
-              opacity: 0;
-              width: 0;
+              opacity: 0.25;
+              width: 100%;
               transition: all 0.4s ease-in-out;
             }
 
@@ -103,7 +103,7 @@ $primaryColor: #4527a4;
           filter: drop-shadow(2px -9px 4px rgba(0, 69, 134, 0.4));
         } */
 
-          &:hover hr {
+          hr {
             opacity: 0.25;
             width: 100%;
           }
