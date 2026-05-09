@@ -9,6 +9,11 @@
 }
 .wp-block-icb-nice-box-pro a {
   outline: none !important;
+  text-decoration: none;
+  color: inherit;
+}
+.wp-block-icb-nice-box-pro a:hover {
+  text-decoration: none;
 }
 .wp-block-icb-nice-box-pro .nbhs-container {
   width: 100%;

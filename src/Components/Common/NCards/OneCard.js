@@ -1,4 +1,6 @@
-const OneCard = ({ attributes, setAttributes }) => {
+import { updateData } from "../../../utils/functions";
+
+const OneCard = ({ attributes, setAttributes, RichTextComponent }) => {
   console.log(attributes?.cards);
   const { cards = {}, options = {} } = attributes || {};
 
@@ -14,7 +16,11 @@ const OneCard = ({ attributes, setAttributes }) => {
         {cards.map((card, index) => (
           <div
             onClick={() => {
-              if (!options.isIcon && options?.clickOnCard) {
+              if (
+                !options.isIcon &&
+                !RichTextComponent &&
+                options?.clickOnCard
+              ) {
                 handleNavigateLink(card.link);
               }
             }}
@@ -28,12 +34,44 @@ const OneCard = ({ attributes, setAttributes }) => {
                 alt={card.title}
               />
               <div className="nbhs-card-body">
-                {options?.isTitle && (
-                  <h5 className="nbhs-card-title">{card.title}</h5>
+                {options?.isTitle && !RichTextComponent && (
+                  <h5
+                    className="nbhs-card-title"
+                    dangerouslySetInnerHTML={{ __html: card.title }}
+                  />
+                )}
+                {options?.isTitle && RichTextComponent && (
+                  <RichTextComponent
+                    className="nbhs-card-title"
+                    placeholder="Enter Title"
+                    tagName="h5"
+                    val={card.title}
+                    onChange={(v) =>
+                      setAttributes({
+                        cards: updateData(cards, v, index, "title"),
+                      })
+                    }
+                  />
                 )}
                 {options?.isDivider && <hr className="nbhs-card-divider" />}
-                {options?.isDescription && (
-                  <p className="nbhs-card-text">{card.description}</p>
+                {options?.isDescription && !RichTextComponent && (
+                  <p
+                    className="nbhs-card-text"
+                    dangerouslySetInnerHTML={{ __html: card.description }}
+                  />
+                )}
+                {options?.isDescription && RichTextComponent && (
+                  <RichTextComponent
+                    className="nbhs-card-text"
+                    tagName="p"
+                    placeholder="Enter description"
+                    val={card.description}
+                    onChange={(v) =>
+                      setAttributes({
+                        cards: updateData(cards, v, index, "description"),
+                      })
+                    }
+                  />
                 )}
               </div>
               <svg
@@ -47,7 +85,7 @@ const OneCard = ({ attributes, setAttributes }) => {
               {options?.isIcon && (
                 <a
                   target={options?.openInNewTab ? "_blank" : "_self"}
-                  href={card.link}
+                  href={!RichTextComponent && card.link}
                   rel="noopener noreferrer"
                 >
                   <span

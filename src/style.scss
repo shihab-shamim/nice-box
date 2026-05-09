@@ -8,6 +8,11 @@ $primaryColor: #4527a4;
   }
   a {
     outline: none !important;
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .nbhs-container {
