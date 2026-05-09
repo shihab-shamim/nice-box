@@ -118,6 +118,27 @@
           "left": "0px"
         },
         "card": {
+          "shadow": [
+            {
+              "color": "rgba(72, 78, 85, 0.6)",
+              "hOffset": "0px",
+              "vOffset": "1px",
+              "blur": "1px",
+              "spreed": "0px",
+              "isInset": false
+            }
+          ],
+          "hoverShadow": [
+            {
+              "color": "rgba(72, 78, 85, 0.6)",
+              "hOffset": "0px",
+              "vOffset": "20px",
+              "blur": "40px",
+              "spreed": "0px",
+              "isInset": false
+            }
+          ],
+          "translateY": -15,
           "bg": { "type": "solid", "color": "#fff" },
           "padding": {
             "top": "0px",

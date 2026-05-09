@@ -182,6 +182,55 @@ const Style = ({ attributes, setAttributes, device }) => {
             });
           }}
         />
+
+        <ShadowControl
+          label={"Shadow"}
+          value={styles?.card?.shadow}
+          onChange={(val) => {
+            setAttributes({
+              styles: {
+                ...styles,
+                card: {
+                  ...styles?.card,
+                  shadow: val,
+                },
+              },
+            });
+          }}
+        />
+        <ShadowControl
+          label={"Hover Shadow"}
+          value={styles?.card?.hoverShadow}
+          onChange={(val) => {
+            setAttributes({
+              styles: {
+                ...styles,
+                card: {
+                  ...styles?.card,
+                  hoverShadow: val,
+                },
+              },
+            });
+          }}
+        />
+        <RangeControl
+          min={-50}
+          max={50}
+          step={1}
+          label="Translate Y"
+          value={styles?.card?.translateY}
+          onChange={(val) => {
+            setAttributes({
+              styles: {
+                ...styles,
+                card: {
+                  ...styles?.card,
+                  translateY: val,
+                },
+              },
+            });
+          }}
+        />
       </PanelBody>
 
       <PanelBody title={"Image"} initialOpen={false} className="bPlPanelBody">

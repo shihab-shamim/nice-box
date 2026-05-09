@@ -57,6 +57,12 @@ const Style = ({ attributes, id }) => {
 		border-color: ${styles?.card?.border?.color};
 		border-style: ${styles?.card?.border?.style};
 		border-width: ${styles?.card?.border?.width};
+		box-shadow: ${getMultiShadowCSS(styles?.card?.shadow)};
+
+		}
+		${cardSl}:hover {
+			box-shadow: ${getMultiShadowCSS(styles?.card?.hoverShadow)};
+			transform: translateY(${styles?.card?.translateY}px);
 
 		}
 		${cardImgSl}{

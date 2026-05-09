@@ -1136,6 +1136,12 @@ const Style = ({
 		border-color: ${styles?.card?.border?.color};
 		border-style: ${styles?.card?.border?.style};
 		border-width: ${styles?.card?.border?.width};
+		box-shadow: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getMultiShadowCSS)(styles?.card?.shadow)};
+
+		}
+		${cardSl}:hover {
+			box-shadow: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getMultiShadowCSS)(styles?.card?.hoverShadow)};
+			transform: translateY(${styles?.card?.translateY}px);
 
 		}
 		${cardImgSl}{
