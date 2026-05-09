@@ -14,6 +14,7 @@ import {
   Device,
   IconLibrary,
   Label,
+  ShadowControl,
   Typography,
 } from "../../../../../../bpl-tools/Components";
 import { updateData } from "../../../../utils/functions";
@@ -354,6 +355,25 @@ const Style = ({ attributes, setAttributes, device }) => {
                     icon: {
                       ...styles?.card?.icon,
                       rotate: val,
+                    },
+                  },
+                },
+              });
+            }}
+          />
+
+          <ShadowControl
+            label={"Hover Shadow"}
+            value={styles?.card?.icon?.hoverShadow}
+            onChange={(val) => {
+              setAttributes({
+                styles: {
+                  ...styles,
+                  card: {
+                    ...styles?.card,
+                    icon: {
+                      ...styles?.card?.icon,
+                      hoverShadow: val,
                     },
                   },
                 },

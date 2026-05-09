@@ -6,6 +6,7 @@ import {
   getBoxCSS,
   getBackgroundCSS,
   getTypoCSS,
+  getMultiShadowCSS,
 } from "../../../../bpl-tools/utils/getCSS";
 
 const Style = ({ attributes, id }) => {
@@ -100,6 +101,7 @@ const Style = ({ attributes, id }) => {
 		  }
 		 ${iconSl}:hover{
             transform: rotate(${styles?.card?.icon?.rotate}deg);
+			box-shadow: ${getMultiShadowCSS(styles?.card?.icon?.hoverShadow)};
 		  }
 
 

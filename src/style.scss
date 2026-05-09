@@ -51,11 +51,6 @@ $primaryColor: #4527a4;
             grid-column: 1 / 2;
             grid-row: 1 / 2;
             width: 100%;
-            // aspect-ratio: 1 / 1;
-            // object-fit: cover;
-            // border-top-left-radius: 25px;
-            // border-top-right-radius: 25px;
-            // height: 370px;
           }
 
           .nbhs-card-body {
@@ -86,15 +81,6 @@ $primaryColor: #4527a4;
             z-index: 1;
           }
 
-          /* &:hover > svg {
-          filter: drop-shadow(2px -9px 4px rgba(0, 69, 134, 0.4));
-        } */
-
-          hr {
-            opacity: 0.25;
-            width: 100%;
-          }
-
           > a {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
@@ -110,17 +96,7 @@ $primaryColor: #4527a4;
             transition: all 0.6s ease-in-out;
             box-sizing: content-box;
             display: block;
-
-            &:hover {
-              box-shadow:
-                rgba(2, 196, 255, 0.25) 0px 30px 60px -12px inset,
-                rgba(255, 2, 204, 0.7) 0px 18px 36px -18px inset;
-            }
           }
-
-          // &:hover .nbhs-icon {
-          //   // transform: rotate(-180deg);
-          // }
         }
       }
     }

@@ -1178,6 +1178,7 @@ const Style = ({
 		  }
 		 ${iconSl}:hover{
             transform: rotate(${styles?.card?.icon?.rotate}deg);
+			box-shadow: ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getMultiShadowCSS)(styles?.card?.icon?.hoverShadow)};
 		  }
 
 
