@@ -20,6 +20,7 @@ $primaryColor: #4527a4;
         width: 100%;
 
         .nbhs-card {
+          overflow: hidden;
           position: relative;
           height: 100%;
           display: grid;
@@ -27,10 +28,10 @@ $primaryColor: #4527a4;
           grid-template-rows: auto 1fr;
           min-width: 0;
           word-wrap: break-word;
-          background-color: #fff;
+          // background-color: #fff;
           background-clip: border-box;
-          border: 1px solid rgba(0, 0, 0, 0.125);
-          border-radius: 25px;
+          // border: 1px solid rgba(0, 0, 0, 0.125);
+          // border-radius: 25px;
           //   margin-top: 3rem;
           //   margin-bottom: 3rem;
 
@@ -50,42 +51,27 @@ $primaryColor: #4527a4;
             grid-column: 1 / 2;
             grid-row: 1 / 2;
             width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
+            // aspect-ratio: 1 / 1;
+            // object-fit: cover;
+            // border-top-left-radius: 25px;
+            // border-top-right-radius: 25px;
+            // height: 370px;
           }
 
           .nbhs-card-body {
             grid-column: 1 / 2;
             grid-row: 2 / 3;
-            padding: 3rem 1rem 1rem;
+            // padding: 3rem 1rem 1rem;
             z-index: 2;
 
-            .nbhs-card-title {
-              margin-bottom: 0.5rem;
-              margin-top: 0;
-              text-transform: uppercase;
-              font-weight: bold;
-              color: #2b2b2b;
-              font-size: 1.25rem;
-              line-height: 1.2;
-            }
-
-            hr {
-              margin: 1rem 0;
-              color: inherit;
+            .nbhs-card-divider {
+              // margin: 1rem 0;
+              // color: red;
               border: 0;
-              border-top: 1px solid;
-              opacity: 0.25;
+              // border-top: 5px solid;
+              // opacity: 0.25;
               width: 100%;
               transition: all 0.4s ease-in-out;
-            }
-
-            .nbhs-card-text {
-              margin-top: 0;
-              margin-bottom: 1rem;
-              padding-bottom: 1rem;
             }
           }
 
@@ -121,17 +107,6 @@ $primaryColor: #4527a4;
           }
 
           .nbhs-icon {
-            color: white;
-            font-size: 3rem;
-            background: rgb(238, 174, 202);
-            background: linear-gradient(
-              133deg,
-              rgba(255, 255, 255, 1) 0%,
-              rgba(211, 210, 231, 1) 19%,
-              rgba(11, 39, 73, 1) 100%
-            );
-            padding: 1rem;
-            border-radius: 100%;
             transition: all 0.6s ease-in-out;
             box-sizing: content-box;
             display: block;
@@ -143,9 +118,9 @@ $primaryColor: #4527a4;
             }
           }
 
-          &:hover .nbhs-icon {
-            transform: rotate(-180deg);
-          }
+          // &:hover .nbhs-icon {
+          //   // transform: rotate(-180deg);
+          // }
         }
       }
     }

@@ -26,6 +26,7 @@ const OneSetting = (props) => {
       />
 
       <TextControl
+        className="mt10"
         placeholder="title..."
         label={__("Title", "info-cards")}
         value={item?.title || ""}

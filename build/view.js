@@ -1040,45 +1040,28 @@ const OneCard = ({
     className: "nbhs-card-body"
   }, options?.isTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     className: "nbhs-card-title"
-  }, card.title), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", null), options?.isDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  }, card.title), options?.isDivider && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", {
+    className: "nbhs-card-divider"
+  }), options?.isDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "nbhs-card-text"
   }, card.description)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+    className: "nbhs-card-wave-shape",
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 1440 320",
     preserveAspectRatio: "none"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    fill: "#ffffff",
     fillOpacity: "1",
     d: options?.[card.wavePath]
   })), options?.isIcon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
     target: options?.openInNewTab ? "_blank" : "_self",
     href: card.link,
     rel: "noopener noreferrer"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "nbhs-icon",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 576 512",
-    width: "1em",
-    height: "1em"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
-    fill: "currentColor",
-    d: "M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.8 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
-    cx: "288",
-    cy: "220",
-    r: "18",
-    fill: "white"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
-    cx: "255",
-    cy: "275",
-    r: "22",
-    fill: "white"
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
-    cx: "321",
-    cy: "275",
-    r: "22",
-    fill: "white"
-  }))))))));
+    dangerouslySetInnerHTML: {
+      __html: options?.icon
+    }
+  })))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (OneCard);
 
@@ -1113,9 +1096,24 @@ const Style = ({
   const containerSl = `${mainSl} .nbhs-container`;
   const rowSl = `${containerSl} .nbhs-row`;
   const cardSl = `${rowSl} .nbhs-card`;
+  const cardWavePathSl = `${cardSl} .nbhs-card-wave-shape`;
+  const cardImgSl = `${cardSl} .nbhs-card-img`;
+  const contentSl = `${cardSl} .nbhs-card-body`;
+  const titleSl = `${contentSl} .nbhs-card-title`;
+  const dividerSl = `${contentSl} .nbhs-card-divider`;
+  const descriptionSl = `${contentSl} .nbhs-card-text`;
+  const iconSl = `${cardSl} .nbhs-icon`;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("style", {
     dangerouslySetInnerHTML: {
       __html: `
+
+         ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.card?.content?.title?.typo)?.googleFontLink}
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)("", styles?.card?.content?.description?.typo)?.googleFontLink}
+
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(titleSl, styles?.card?.content?.title?.typo)?.styles}
+		  ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getTypoCSS)(descriptionSl, styles?.card?.content?.description?.typo)?.styles}
+
+
 
 		${containerSl}{
 		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.bg)}
@@ -1131,8 +1129,58 @@ const Style = ({
 
 		${cardSl} {
 		cursor: ${!options?.isIcon && options?.clickOnCard ? "pointer" : "default"};
+		${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.card?.bg)}
+		border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.radius)};
+		padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.padding)};
+		
+		border-color: ${styles?.card?.border?.color};
+		border-style: ${styles?.card?.border?.style};
+		border-width: ${styles?.card?.border?.width};
 
 		}
+		${cardImgSl}{
+			height: ${styles?.card?.image?.height};
+		object-fit: ${styles?.card?.image?.objectFit};
+		}
+
+		${cardWavePathSl} path{
+		fill:${styles?.card?.shapeColor};
+		 }
+
+		 ${contentSl}{
+		 padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.content?.padding)}
+		 }
+		 ${titleSl}{
+		 color:${styles?.card?.content?.title?.color};
+		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.content?.title?.margin)};
+		 }
+
+		 ${dividerSl}{
+		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.content?.divider?.margin)};
+	
+		 border-top: ${styles?.card?.content?.divider?.width} ${styles?.card?.content?.divider?.style} ${styles?.card?.content?.divider?.color};
+	 opacity:${styles?.card?.content?.divider?.opacity};
+		 }
+
+		 ${descriptionSl}{
+		 margin:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.content?.description?.margin)};
+			color:${styles?.card?.content?.description?.color};
+		  }
+
+		  ${iconSl}{
+		  	width:${styles?.card?.icon?.size}px;
+			height:${styles?.card?.icon?.size}px;
+		  	color:${styles?.card?.icon?.color};
+			fill:${styles?.card?.icon?.color};
+		  	 ${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBackgroundCSS)(styles?.card?.icon?.bg)}
+			padding:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.icon?.padding)};
+			border-radius:${(0,_bpl_tools_utils_getCSS__WEBPACK_IMPORTED_MODULE_2__.getBoxCSS)(styles?.card?.icon?.radius)};
+		  }
+		 ${iconSl}:hover{
+            transform: rotate(${styles?.card?.icon?.rotate}deg);
+		  }
+
+
 
 		${_bpl_tools_utils_data__WEBPACK_IMPORTED_MODULE_1__.tabBreakpoint}{
 		${rowSl}{

@@ -143,6 +143,14 @@ const General = ({ attributes, setAttributes, device }) => {
             setAttributes({ options: { ...options, openInNewTab: val } })
           }
         />
+        <ToggleControl
+          className="mt10"
+          label={__("Show Divider", "info-cards")}
+          checked={options?.isDivider}
+          onChange={(val) =>
+            setAttributes({ options: { ...options, isDivider: val } })
+          }
+        />
       </PanelBody>
     </>
   );
